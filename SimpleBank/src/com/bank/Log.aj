@@ -39,4 +39,11 @@ public aspect Log {
 	    write(file,"\nSe realizo un deposito " + " " + cal.getTime());
 		
     }
+    pointcut llamar(): call(void Bank.moneyWithdrawal());
+    after(): llamar(){
+    	
+    	write(file,"\nIngresando al Banco...Retiros" + " " + cal.getTime());
+    	System.out.println("Saliendo de Retiros...");
+    	
+}
 }
