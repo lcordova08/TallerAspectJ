@@ -10,7 +10,8 @@ public aspect Log {
     Calendar cal = Calendar.getInstance();
     pointcut open() : call(void Bank.initBank());
     after(): open(){
-    	write(file,"Ingresando al Banco...\n");
+    	
+    	write(file,"Ingresando al Banco..." + " " + cal.getTime());
     	System.out.println("Ingresando al Banco...");
     }
     private static void write(File f,String data) {
