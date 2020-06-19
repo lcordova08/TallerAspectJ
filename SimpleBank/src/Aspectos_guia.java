@@ -1,4 +1,4 @@
-
+ 
 class Aspectos_guia{
 	//Esta clase debe ser eliminada
 }
