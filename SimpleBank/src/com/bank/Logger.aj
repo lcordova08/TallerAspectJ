@@ -16,6 +16,10 @@ public aspect Logger {
 	    	System.out.println("Saliendo de Retiros...");
 	    	
 }
+	    pointcut success() : call(* create*(..) );
+	    after() : success() {
+	    	System.out.println("**** User created ****");
+	    }
 	    private static void write(File file,String data) {
 	    	
 	    	BufferedWriter bw = null;
